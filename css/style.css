@@ -20,14 +20,12 @@ ul {
 	list-style: none;
 }
 
-h1 {
-	/* font-family: Ubuntu, sans-serif; */
-}
-
+h2,
 h3 {
 	text-align: center;
 	color: var(--grad-bg-body-start);
 	font-size: 1.5em;
+	margin: 0rem 1.7rem 0.75rem 1.7rem;
 }
 
 :root {
@@ -72,7 +70,7 @@ h3 {
 	gap: 5rem;
 	background: linear-gradient(135deg, var(--grad-bg-intro-start), var(--grad-bg-intro-end));
 	min-height: 33rem;
-	border-bottom-left-radius: 20%;
+	border-bottom-left-radius: 5rem;
 	text-align: center;
 	color: white;
 }
@@ -117,7 +115,7 @@ h3 {
 
 .headButton {
 	margin: 0.25em;
-	width: 8em;
+	width: 8.5em;
 	height: 3em;
 	border-radius: 25px;
 	border: 1px solid white;
@@ -138,6 +136,10 @@ h3 {
 /* TODO Designed for the future TODO */
 
 .designedForFutureSection {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+	margin-bottom: 10em;
 }
 
 .imgDesignFuture {
@@ -145,6 +147,76 @@ h3 {
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center;
+	padding-top: 17em;
+	padding-bottom: 17em;
+}
+
+.yap {
+	text-align: center;
+	padding-bottom: 4rem;
+	font-weight: 200;
+	padding-left: 1em;
+	padding-right: 1em;
+	font-size: 0.95em;
+	line-height: 1.75em;
+}
+
+/* TODO PHONES SECTION TODO */
+
+.stateArtSection {
+	color: white;
+	background: url(../images/bg-pattern-circles.svg) center -20vh, linear-gradient(45deg, var(--grad-bg-body-start), var(--grad-bg-body-end));
+	background-size: contain;
+	background-repeat: no-repeat;
+	border-top-right-radius: 5rem;
+	border-bottom-left-radius: 5rem;
+}
+
+.stateArtTitle {
+	color: white;
+}
+
+.imgPhones {
 	padding-top: 10em;
 	padding-bottom: 10em;
+	background-image: url(../images/illustration-phones.svg);
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-size: contain;
+	margin-top: -10em;
+}
+
+/* TODO LAPTOP SECTION TODO */
+
+.imgLaptop {
+	padding-top: 10em;
+	padding-bottom: 10em;
+	background-image: url(../images/illustration-laptop-mobile.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+
+.attribution {
+	border-top-right-radius: 5rem;
+	font-size: 1em;
+	padding-bottom: 3em;
+}
+
+.attribution h4 {
+	font-size: 2.5em;
+	margin: 1em;
+}
+
+.attribution h5 {
+	font-weight: 700;
+	font-size: 1em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.attribution li {
+	padding: 0.25em;
+	font-weight: 300;
+	color: rgba(255, 255, 255, 0.582);
 }
