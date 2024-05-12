@@ -28,6 +28,21 @@ h3 {
 	margin: 0rem 1.7rem 0.75rem 1.7rem;
 }
 
+button {
+	margin: 0.25rem;
+	width: 8.5rem;
+	height: 3rem;
+	border-radius: 25px;
+	border: 1px solid white;
+	font-weight: 700;
+	font-size: 1em;
+}
+
+p {
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+}
+
 :root {
 	/* Primary */
 	--clr-light-red: hsl(356, 100%, 66%);
@@ -63,6 +78,11 @@ h3 {
 
 /* TODO HEADER TODO */
 
+.hidden,
+.hidden * {
+	display: none;
+}
+
 .header {
 	display: flex;
 	flex-direction: column;
@@ -81,6 +101,59 @@ h3 {
 	justify-content: space-between;
 	width: 100%;
 	padding: 1.5rem;
+}
+
+.desktopMenuOptions {
+	display: flex;
+	gap: 2em;
+}
+
+.arrow {
+	background-image: url(../images/icon-arrow-light.svg);
+	background-repeat: no-repeat;
+	background-position: right center;
+	background-size: 10%;
+	padding-right: 0.75em;
+	position: relative;
+}
+
+.arrow:hover {
+	cursor: pointer;
+	color: rgba(255, 255, 255, 0.568);
+}
+
+.floating-menu {
+	background-color: rgb(245, 245, 245);
+	color: black;
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	margin-left: -1em;
+	top: 2em;
+	border-radius: 5px;
+	font-size: 1em;
+	text-align: left;
+	font-weight: 500;
+	max-width: 9em;
+	box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
+}
+
+.floating-menu * {
+	padding: 0.5em;
+	padding-right: 3em;
+}
+
+.floating-menu *:hover {
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.floating-menu:first-child {
+	padding-top: 0.75em;
+}
+
+.floating-menu:last-child {
+	padding-bottom: 0.75em;
 }
 
 .menu {
@@ -103,32 +176,24 @@ h3 {
 	font-size: 2em;
 	font-weight: 500;
 	align-self: center;
+	color: white;
 }
 
 .titleDescription {
 	font-size: 1.25em;
+	color: rgba(255, 255, 255, 0.75);
 }
 
 .headButtons {
 	margin-top: 1.5em;
 }
 
-.headButton {
-	margin: 0.25em;
-	width: 8.5em;
-	height: 3em;
-	border-radius: 25px;
-	border: 1px solid white;
-	font-weight: 700;
-	font-size: 1em;
-}
-
-.startForFree {
+#startForFree {
 	background-color: white;
 	color: hsl(353, 100%, 62%);
 }
 
-.learnMore {
+#learnMore {
 	background-color: rgba(255, 0, 0, 0);
 	color: white;
 }

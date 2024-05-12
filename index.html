@@ -8,6 +8,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/queries.css">
+  <script src="js/script.js" defer></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,8 +32,40 @@
 
     <header class="header">
       <div class="top">
-        <h1 class="brand">Blogr</h1>
-        <div class="menu"></div>
+        <div class="titleAndMenu">
+          <h1 class="brand">Blogr</h1>
+          <div class="desktopMenu desktopOnly">
+            <ul class="desktopMenuOptions">
+              <li class="productMenu arrow">Product
+                <div class="floating-menu hidden">
+                  <p>ADD</p>
+                  <p>ADD</p>
+                  <p>ADD</p>
+                </div>
+              </li>
+              <li class="productCompany arrow">Company
+                <div class="floating-menu hidden">
+                  <p>ADD</p>
+                  <p>ADD</p>
+                  <p>ADD</p>
+                </div>
+              </li>
+              <li class="productConnect arrow">Connect
+                <div class="floating-menu hidden">
+                  <p>Contact</p>
+                  <p>Newsletter</p>
+                  <p>LinkedIn</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="connectButtons desktopOnly">
+          <button id="loginButton">Login</button>
+          <button id="signUpButton">Sign Up</button>
+        </div>
+        <div class="menu phoneOnly"></div>
       </div>
   
       <div class="titleAndDescription">
@@ -40,8 +73,8 @@
         <p class="titleDescription">Grow your audience and build your online brand</p>
   
         <div class="headButtons">
-          <button class="startForFree headButton">Start for Free</button>
-          <button class="learnMore headButton">Learn More</button>
+          <button class="headButton" id="startForFree">Start for Free</button>
+          <button class="headButton" id="learnMore">Learn More</button>
         </div>
       </div>
       
@@ -52,7 +85,7 @@
       <h2>Designed for the future</h2>
       <div class="designedFutureDesc">
         <div class="imgDesignFuture"></div>
-        <div class="designFutureDescription">
+        <div class="designFutureDescription descriptionDesktop">
           <h3>Introducing an extensible editor</h3>
           <p class="yap">
             Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content.
@@ -83,7 +116,7 @@
   
     <section class="freeOpenSimpleSection">
       <div class="imgLaptop"></div>
-      <div class="laptopDescription">
+      <div class="laptopDescription descriptionDesktop">
         <h3>Free, open, simple</h3>
         <p class="yap">
           Blogr is a free and open source application backed by a large community of helpful developers. It supports features such as
