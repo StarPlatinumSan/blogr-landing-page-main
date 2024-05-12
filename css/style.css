@@ -1,0 +1,150 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Overpass, sans-serif;
+}
+
+body {
+	font-family: Overpass, sans-serif;
+	/* font-family: Ubuntu, sans-serif; */
+}
+
+footer {
+	background-color: var(--clr-vd-black-blue);
+	padding: 1rem;
+	color: white;
+}
+
+ul {
+	list-style: none;
+}
+
+h1 {
+	/* font-family: Ubuntu, sans-serif; */
+}
+
+h3 {
+	text-align: center;
+	color: var(--grad-bg-body-start);
+	font-size: 1.5em;
+}
+
+:root {
+	/* Primary */
+	--clr-light-red: hsl(356, 100%, 66%);
+	--clr-vlt-red: hsl(355, 100%, 74%);
+	--clr-vd-blue: hsl(208, 49%, 24%);
+
+	/* Neutral */
+	--clr-white: hsl(0, 0%, 100%);
+	--clr-grayish-blue: hsl(240, 2%, 79%);
+	--clr-vd-grayish-blue: hsl(207, 13%, 34%);
+	--clr-vd-black-blue: hsl(240, 10%, 16%);
+
+	/* Gradient - Intro/CTA mobile nav */
+	--grad-bg-intro-start: hsl(13, 100%, 72%);
+	--grad-bg-intro-end: hsl(353, 100%, 62%);
+
+	/* Gradient - Body */
+	--grad-bg-body-start: hsl(237, 17%, 21%);
+	--grad-bg-body-end: hsl(237, 23%, 32%);
+}
+
+.flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	gap: 4rem;
+}
+
+/* TODO HEADER TODO */
+
+.header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 5rem;
+	background: linear-gradient(135deg, var(--grad-bg-intro-start), var(--grad-bg-intro-end));
+	min-height: 33rem;
+	border-bottom-left-radius: 20%;
+	text-align: center;
+	color: white;
+}
+
+.top {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
+	padding: 1.5rem;
+}
+
+.menu {
+	background-image: url(../images/icon-hamburger.svg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	padding: 1rem;
+}
+
+.titleAndDescription {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+	font-weight: 300;
+	width: 90%;
+}
+
+.title {
+	font-size: 2em;
+	font-weight: 500;
+	align-self: center;
+}
+
+.titleDescription {
+	font-size: 1.25em;
+}
+
+.headButtons {
+	margin-top: 1.5em;
+}
+
+.headButton {
+	margin: 0.25em;
+	width: 8em;
+	height: 3em;
+	border-radius: 25px;
+	border: 1px solid white;
+	font-weight: 700;
+	font-size: 1em;
+}
+
+.startForFree {
+	background-color: white;
+	color: hsl(353, 100%, 62%);
+}
+
+.learnMore {
+	background-color: rgba(255, 0, 0, 0);
+	color: white;
+}
+
+/* TODO Designed for the future TODO */
+
+.designedForFutureSection {
+}
+
+.imgDesignFuture {
+	background-image: url(../images/illustration-editor-mobile.svg);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	padding-top: 10em;
+	padding-bottom: 10em;
+}
