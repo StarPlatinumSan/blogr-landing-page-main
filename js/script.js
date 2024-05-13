@@ -23,19 +23,22 @@ document.addEventListener("DOMContentLoaded", (event) => {
 		}
 	}
 
-	function showSubMenu() {
+	function showSubMenu(e) {
 		const submenu = this.querySelector(".floating-menu");
-		submenu.classList.remove("hidden");
+		submenu.style.display = "flex";
+		e.stopPropagation();
+		submenu.addEventListener("click", hideSubMenu);
 	}
 
-	function hideSubMenu() {
-		const submenu = this.querySelector(".floating-menu");
-		submenu.classList.add("hidden");
+	function hideSubMenu(e) {
+		if (this.contains(e.target)) {
+			this.style.display = "none";
+		}
+		this.removeEventListener("click", hideSubMenu);
 	}
 
 	menuElementsDesktop.forEach((element) => {
-		element.addEventListener("mouseover", showSubMenu);
-		element.addEventListener("mouseout", hideSubMenu);
+		element.addEventListener("click", showSubMenu);
 	});
 	window.addEventListener("resize", screenWidth);
 });

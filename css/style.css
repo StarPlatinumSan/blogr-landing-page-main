@@ -5,9 +5,13 @@
 	font-family: Overpass, sans-serif;
 }
 
+html {
+	overflow-x: hidden;
+}
+
 body {
 	font-family: Overpass, sans-serif;
-	/* font-family: Ubuntu, sans-serif; */
+	overflow-x: hidden;
 }
 
 footer {
@@ -125,8 +129,6 @@ p {
 .floating-menu {
 	background-color: rgb(245, 245, 245);
 	color: black;
-	display: flex;
-	flex-direction: column;
 	position: absolute;
 	margin-left: -1em;
 	top: 2em;
@@ -134,26 +136,22 @@ p {
 	font-size: 1em;
 	text-align: left;
 	font-weight: 500;
-	max-width: 9em;
+	height: 9em;
+	width: 9em;
 	box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	gap: 0.75em;
 }
 
 .floating-menu * {
-	padding: 0.5em;
-	padding-right: 3em;
+	margin-left: 1em;
 }
 
 .floating-menu *:hover {
 	font-weight: bold;
 	cursor: pointer;
-}
-
-.floating-menu:first-child {
-	padding-top: 0.75em;
-}
-
-.floating-menu:last-child {
-	padding-bottom: 0.75em;
 }
 
 .menu {
