@@ -4,8 +4,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 	const desktopSize = 700;
 	const menuDesktop = document.querySelectorAll(".desktopOnly");
 	const menuPhone = document.querySelector(".phoneOnly");
-	const menuElementsDesktop = document.querySelectorAll(".arrow");
-	const floatingMenu = document.querySelectorAll(".floating-menu");
+	const dropdownPhone = document.getElementById("dropdownPhone");
 
 	function screenWidth() {
 		if (window.innerWidth >= desktopSize) {
@@ -13,6 +12,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 				element.classList.remove("hidden");
 			});
 			menuPhone.classList.add("hidden");
+			dropdownPhone.style.display = "none";
 		}
 
 		if (window.innerWidth < desktopSize) {
@@ -23,22 +23,56 @@ document.addEventListener("DOMContentLoaded", (event) => {
 		}
 	}
 
-	function showSubMenu(e) {
-		const submenu = this.querySelector(".floating-menu");
-		submenu.style.display = "flex";
-		e.stopPropagation();
-		submenu.addEventListener("click", hideSubMenu);
-	}
+	function dropdown(e) {
+		const isDropdownButton = e.target.matches("[data-dropdown-button]");
+		if (!isDropdownButton && e.target.closest("[data-dropdown]") != null) return;
 
-	function hideSubMenu(e) {
-		if (this.contains(e.target)) {
-			this.style.display = "none";
+		let currentDropdown;
+		if (isDropdownButton) {
+			currentDropdown = e.target.closest("[data-dropdown]");
+			currentDropdown.classList.toggle("active");
 		}
-		this.removeEventListener("click", hideSubMenu);
+
+		document.querySelectorAll("[data-dropdown].active").forEach((dropdown) => {
+			if (dropdown === currentDropdown) return;
+			dropdown.classList.remove("active");
+		});
 	}
 
-	menuElementsDesktop.forEach((element) => {
-		element.addEventListener("click", showSubMenu);
-	});
+	function dropdownPhoneVersion(e) {
+		if (dropdownPhone.style.display === "none" || dropdownPhone.style.display === "") {
+			dropdownPhone.style.display = "flex";
+
+			setTimeout(function () {
+				dropdownPhone.style.opacity = "1";
+				dropdownPhone.style.transform = "translateY(0%)";
+				menuPhone.style.backgroundImage = "url(../images/icon-close.svg)";
+			}, 150);
+			e.stopPropagation();
+			document.addEventListener("click", verifyDropdownPhone);
+		} else {
+			closePhoneDropdown();
+		}
+	}
+
+	function verifyDropdownPhone(e) {
+		if (!dropdownPhone.contains(e.target) && e.target !== menuPhone) {
+			closePhoneDropdown();
+			document.removeEventListener("click", verifyDropdownPhone);
+		}
+	}
+
+	function closePhoneDropdown() {
+		dropdownPhone.style.opacity = "0";
+		dropdownPhone.style.transform = "translateY(100%)";
+		menuPhone.style.backgroundImage = "url(../images/icon-hamburger.svg)";
+		setTimeout(function () {
+			dropdownPhone.style.display = "none";
+		}, 300);
+	}
+
+	menuPhone.addEventListener("click", dropdownPhoneVersion);
+	document.addEventListener("click", dropdown);
+
 	window.addEventListener("resize", screenWidth);
 });

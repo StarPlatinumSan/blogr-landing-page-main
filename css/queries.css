@@ -18,11 +18,16 @@
 	}
 
 	.titleAndMenu {
+		gap: 2.5em;
+	}
+
+	.desktopMenu {
 		display: flex;
-		align-items: center;
-		justify-content: flex-start;
-		gap: 3em;
-		max-width: 70%;
+		gap: 1.5em;
+	}
+
+	.desktopButton {
+		display: block;
 	}
 
 	.connectButtons {
@@ -36,6 +41,10 @@
 		background-color: rgba(255, 0, 0, 0);
 		color: rgba(255, 255, 255, 0.75);
 		border: none;
+	}
+
+	#loginButton:hover {
+		border: 1px solid white;
 	}
 
 	#signUpButton {
@@ -113,6 +122,18 @@
 	.menu {
 		display: none;
 	}
+
+	.attribution {
+		display: flex;
+		justify-content: space-evenly;
+		gap: 5em;
+		padding: 6rem;
+		padding-left: 0;
+	}
+
+	.attribution h4 {
+		margin-top: 0;
+	}
 }
 
 @media (min-width: 1100px) {
@@ -149,5 +170,9 @@
 
 	.descriptionDesktop p {
 		max-width: 60rem;
+	}
+
+	.titleAndMenu {
+		gap: 4em;
 	}
 }

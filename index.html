@@ -34,38 +34,58 @@
       <div class="top">
         <div class="titleAndMenu">
           <h1 class="brand">Blogr</h1>
-          <div class="desktopMenu desktopOnly">
-            <ul class="desktopMenuOptions">
-              <li class="productMenu arrow">Product
-                <div class="floating-menu">
-                  <span>ADD</span>
-                  <span>ADD</span>
-                  <span>ADD</span>
-                </div>
-              </li>
-              <li class="productCompany arrow">Company
-                <div class="floating-menu">
-                  <span>ADD</span>
-                  <span>ADD</span>
-                  <span>ADD</span>
-                </div>
-              </li>
-              <li class="productConnect arrow">Connect
-                <div class="floating-menu">
-                  <span>Contact</span>
-                  <span>Newsletter</span>
-                  <span>LinkedIn</span>
-                </div>
-              </li>
-            </ul>
+          <div class="desktopMenu">
+
+            <div class="dropdown" data-dropdown>
+              <button class="arrow link" id="product" data-dropdown-button>Product</button>
+              <div class="dropdown-menu">
+                <span><a href="">Value</a></span>
+                <span><a href="">Cost</a></span>
+                <span><a href="">Server</a></span>
+              </div>
+            </div>
+
+            <div class="dropdown" data-dropdown>
+              <button class="arrow link" id="company" data-dropdown-button>Company</button>
+              <div class="dropdown-menu">
+                <span><a href="">About us</a></span>
+                <span><a href="">Contact</a></span>
+                <span><a href="">License</a></span>
+              </div>
+            </div>
+
+            <div class="dropdown" data-dropdown>
+              <button class="arrow link" id="connect" data-dropdown-button>Connect</button>
+              <div class="dropdown-menu">
+                <span><a href="">Contact</a></span>
+                <span><a href="">Newsletter</a></span>
+                <span><a href="">Linkedin</a></span>
+              </div>
+            </div>
+
           </div>
         </div>
         
-        <div class="connectButtons desktopOnly">
-          <button id="loginButton">Login</button>
-          <button id="signUpButton">Sign Up</button>
+        <div class="connectButtons">
+          <button class="button desktopButton" id="loginButton">Login</button>
+          <button class="button desktopButton" id="signUpButton">Sign Up</button>
         </div>
         <div class="menu phoneOnly"></div>
+        <div id="dropdownPhone">
+
+          <div class="allButtonsMenuPhone">
+            <button class="phoneButton" data-dropdown-button>Product</button>
+            <button class="phoneButton" data-dropdown-button>Company</button>
+            <button class="phoneButton" data-dropdown-button>Connect</button>
+          </div>
+          
+  
+          <div class="buttonDropdown">
+            <button class="button" id="loginButtonPhone">Login</button>
+            <button class="button" id="signUpButtonPhone">Sign Up</button>
+          </div>
+          
+        </div>
       </div>
   
       <div class="titleAndDescription">
@@ -73,8 +93,8 @@
         <p class="titleDescription">Grow your audience and build your online brand</p>
   
         <div class="headButtons">
-          <button class="headButton" id="startForFree">Start for Free</button>
-          <button class="headButton" id="learnMore">Learn More</button>
+          <button class="headButton button" id="startForFree">Start for Free</button>
+          <button class="headButton button" id="learnMore">Learn More</button>
         </div>
       </div>
       
@@ -138,28 +158,28 @@
       <div class="listFooter">
         <h5>Product</h5>
         <ul>
-          <li>Overview</li>
-          <li>Pricing</li>
-          <li>Marketplace</li>
-          <li>Features</li>
-          <li>Integrations</li>
+          <li><a href="#" class="footerClick">Overview</a></li>
+          <li><a href="#" class="footerClick">Pricing</a></li>
+          <li><a href="#" class="footerClick">Marketplace</a></li>
+          <li><a href="#" class="footerClick">Features</a></li>
+          <li><a href="#" class="footerClick">Integrations</a></li>
         </ul>
       </div>
       <div class="listFooter">
         <h5>Company</h5>
         <ul>
-          <li>About</li>
-          <li>Team</li>
-          <li>Blog</li>
-          <li>Careers</li>
+          <li><a href="#" class="footerClick">About</a></li>
+          <li><a href="#" class="footerClick">Team</a></li>
+          <li><a href="#" class="footerClick">Blog</a></li>
+          <li><a href="#" class="footerClick">Careers</a></li>
         </ul>
       </div>
       <div class="listFooter">
         <h5>Connect</h5>
         <ul>
-          <li>Contact</li>
-          <li>Newsletter</li>
-          <li>LinkedIn</li>
+          <li><a href="#" class="footerClick">Contact</a></li>
+          <li><a href="#" class="footerClick">Newsletter</a></li>
+          <li><a href="#" class="footerClick">LinkedIn</a></li>
         </ul>
       </div>
       
