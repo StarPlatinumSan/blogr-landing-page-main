@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 	const menuDesktop = document.querySelectorAll(".desktopOnly");
 	const menuPhone = document.querySelector(".phoneOnly");
 	const dropdownPhone = document.getElementById("dropdownPhone");
+	const phoneButtons = document.querySelectorAll(".phoneButton");
 
 	function screenWidth() {
 		if (window.innerWidth >= desktopSize) {
@@ -71,8 +72,28 @@ document.addEventListener("DOMContentLoaded", (event) => {
 		}, 300);
 	}
 
+	function phoneMenuDropdown(e) {
+		const isDropdownButton = e.target.matches("[data-dropdown-button-phone]");
+		if (!isDropdownButton && !e.target.closest(".subdivPhone")) {
+			document.querySelectorAll(".subdivPhone").forEach((dropdown) => {
+				dropdown.style.display = "none";
+			});
+			return;
+		}
+
+		const currentDropdown = e.target.nextElementSibling;
+
+		document.querySelectorAll(".subdivPhone").forEach((dropdown) => {
+			if (dropdown !== currentDropdown) {
+				dropdown.style.display = "none";
+			}
+		});
+
+		currentDropdown.style.display = currentDropdown.style.display === "flex" ? "none" : "flex";
+	}
+
 	menuPhone.addEventListener("click", dropdownPhoneVersion);
 	document.addEventListener("click", dropdown);
-
+	document.addEventListener("click", phoneMenuDropdown);
 	window.addEventListener("resize", screenWidth);
 });
